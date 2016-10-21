@@ -9,8 +9,8 @@ const UserList = ({ users }) => {
 
 UserList.propTypes = {
   users: PropTypes.arrayOf(PropTypes.shape({
-  	id: PropTypes.number.isRequired,
-  	username: PropTypes.string.isRequired
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired
   }).isRequired).isRequired
 }
 
