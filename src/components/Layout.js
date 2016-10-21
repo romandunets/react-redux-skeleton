@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const App = () => (
   <div>
+    <UsersList>
   </div>
-);
+)
 
-export default App;
+export default App

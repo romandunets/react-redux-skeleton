@@ -3,13 +3,13 @@ const user = (state = [], action) => {
     default:
       return state;
   }
-};
+}
 
 const users = (state = [], action) => {
   switch(action.type) {
     default:
       return state;
   }
-};
+}
 
-export default users;
+export default users
