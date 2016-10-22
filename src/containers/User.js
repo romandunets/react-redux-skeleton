@@ -1,8 +1,8 @@
-import React, { propTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-const User = ({ username }) => {
+const User = ({ username }) => (
   <li>{username}</li>
-}
+)
 
 User.propTypes = {
   id: PropTypes.number.isRequired,
