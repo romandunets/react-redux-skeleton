@@ -1,9 +1,9 @@
 import React from 'react'
-import UserList from '../containers/UserList'
+import UsersList from '../containers/UsersList'
 
 const App = () => (
   <div>
-    <UserList />
+    <UsersList />
   </div>
 )
 

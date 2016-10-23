@@ -1,4 +1,4 @@
-const user = (state = [], action) => {
+const user = (state = {}, action) => {
   switch(action.type) {
     default:
       return state;
