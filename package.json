@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --colors --inline"
   },
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",

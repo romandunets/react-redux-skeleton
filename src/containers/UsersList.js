@@ -1,17 +1,32 @@
-import React, { PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchUsers } from '../actions'
 import User from './User'
 
-const UserList = ({ users }) => (
-  <ul>
-    { users.map (user => <User key={user.id} {...user} />) }
-  </ul>
-)
+class UserList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchUsers();
+  }
+
+  render() {
+    console.log(this.props);
+    const { users } = this.props;
+
+    return (
+      <ul>
+        { users.map (user => <User key={user.id} {...user} />) }
+      </ul>
+    );
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users
+    users: state.users.users
   }
 }
 

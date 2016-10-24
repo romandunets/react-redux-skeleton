@@ -5,8 +5,11 @@ const user = (state = {}, action) => {
   }
 }
 
-const users = (state = [], action) => {
+const users = (state = { users: [] }, action) => {
+	console.log(action.type)
   switch(action.type) {
+    case "FETCH_USERS":
+      return {...state, users: action.payload}
     default:
       return state;
   }
