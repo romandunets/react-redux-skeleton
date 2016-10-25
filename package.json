@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --colors --inline",
+    "start": "webpack-dev-server --colors --inline --port 3000",
     "build": "webpack --progress --colors",
-    "api": "json-server --watch db.json --port 9000"
+    "api": "json-server --watch data/db.json --port 9000"
   },
   "dependencies": {
     "axios": "^0.15.2",
