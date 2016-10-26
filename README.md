@@ -28,8 +28,22 @@ Install all dependencies:
 npm install
 ```
 
+Start api mockup json-server:
+
+```
+npm run api
+```
+
 Start auto-reloading webpack-dev-server:
 
 ```
 npm start
+```
+
+## DEBUGGING
+
+If you have `Error: watch . ENOSPC` error while running api, this can solve the problem:
+
+```
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
