@@ -4,10 +4,10 @@ export function fetchUsers() {
   return function(dispatch) {
     axios.get('http://0.0.0.0:9000/users')
       .then(function (response) {
-        dispatch(fetchUsersSuccess(response));
+        dispatch(fetchUsersSuccess(response.data));
       })
       .catch(function (error) {
-        console.log(fetchUsersFail(error));
+        dispatch(fetchUsersFail(error));
       });
   }
 }
