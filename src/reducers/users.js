@@ -1,3 +1,5 @@
+import { FETCH_USERS_SUCCESS, FETCH_USERS_FAILED } from '../actionTypes'
+
 const user = (state = {}, action) => {
   switch(action.type) {
     default:
@@ -10,9 +12,9 @@ const users = (state = {
     error: ''
   }, action) => {
   switch(action.type) {
-    case "FETCH_USERS_SUCCESS":
+    case FETCH_USERS_SUCCESS:
       return {...state, users: action.payload.users}
-    case "FETCH_USERS_FAILED":
+    case FETCH_USERS_FAILED:
       return {...state, error: action.payload}
     default:
       return state;

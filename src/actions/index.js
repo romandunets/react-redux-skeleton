@@ -1,4 +1,6 @@
-import axios from 'axios';
+import axios from 'axios'
+
+import { FETCH_USERS_SUCCESS, FETCH_USERS_FAILED } from '../actionTypes'
 
 export function fetchUsers() {
   return function(dispatch) {
@@ -14,14 +16,14 @@ export function fetchUsers() {
 
 function fetchUsersSuccess(users) {
   return {
-    type: "FETCH_USERS_SUCCESS",
+    type: FETCH_USERS_SUCCESS,
     payload: { users }
   }
 }
 
 function fetchUsersFail(error) {
   return {
-    type: "FETCH_USERS_FAIL",
+    type: FETCH_USERS_FAILED,
     payload: { error }
   }
 }
