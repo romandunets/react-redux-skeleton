@@ -1,16 +1,17 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
 
-import App from './components/App'
-import configureStore from './store/configureStore.js'
+import App from './components/App';
+import configureStore from './store/configureStore.js';
+import routes from './routes.js';
 
 const store = configureStore();
 
 render(
   <Provider store={store}>
-    <App />
+    <Router history={browserHistory} routes={routes(store)} />
   </Provider>,
   document.getElementById('app')
 );
