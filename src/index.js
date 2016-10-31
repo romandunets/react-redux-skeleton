@@ -1,17 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import thunk from 'redux-thunk'
-import App from './components/App'
-import reducer from './reducers'
+import { createStore, applyMiddleware } from 'redux'
 
-const middleware = applyMiddleware(thunk)
-const store = createStore(reducer, middleware)
+import App from './components/App'
+import configureStore from './store/configureStore.js'
+
+const store = configureStore();
 
 render(
   <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('app')
-)
+);
