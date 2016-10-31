@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import Layout from './components/Layout'
+import App from './components/App'
 import reducer from './reducers'
 
 const middleware = applyMiddleware(thunk)
@@ -11,7 +11,7 @@ const store = createStore(reducer, middleware)
 
 render(
   <Provider store={store}>
-    <Layout />
+    <App />
   </Provider>,
   document.getElementById('app')
 )
