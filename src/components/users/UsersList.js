@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import User from './User'
+import UsersListItem from './UsersListItem'
 
 const UsersList = ({ users }) => {
   return (
-    <ul>{ users.map (user => <User key={user.id} {...user} />) }</ul>
+    <ul>{ users.map (user => <UsersListItem key={user.id} user={user} />) }</ul>
   );
 }
 
