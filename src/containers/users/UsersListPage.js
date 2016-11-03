@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as userActions from '../../actions'
+import * as userActions from '../../actions/userActions'
 import UsersList from '../../components/users/UsersList'
 
 class UsersListPage extends Component {
