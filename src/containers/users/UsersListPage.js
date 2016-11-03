@@ -7,7 +7,7 @@ import UsersList from '../../components/users/UsersList'
 
 class UsersListPage extends Component {
   componentWillMount() {
-    this.props.actions.fetchUsers();
+    this.props.actions.listUsers();
   }
 
   render() {

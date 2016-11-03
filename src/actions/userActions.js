@@ -1,29 +1,35 @@
 import axios from 'axios'
 
 import * as types from '../actions/actionTypes';
+import userApi from '../api/UserApi';
 
-export function fetchUsers() {
+export function listUsers() {
   return function(dispatch) {
-    axios.get('http://0.0.0.0:9000/users')
+    dispatch(listUsersRequest());
+    userApi.listUsers()
       .then(function (response) {
-        dispatch(fetchUsersSuccess(response.data));
+        dispatch(listUsersSuccess(response.data));
       })
       .catch(function (error) {
-        dispatch(fetchUsersFail(error));
+        dispatch(listUsersFailure(error));
       });
   }
 }
 
-function fetchUsersSuccess(users) {
+function listUsersRequest() {
+  return { type: types.LIST_USERS_REQUEST }
+}
+
+function listUsersSuccess(users) {
   return {
-    type: types.FETCH_USERS_SUCCESS,
+    type: types.LIST_USERS_SUCCESS,
     payload: { users }
   }
 }
 
-function fetchUsersFail(error) {
+function listUsersFailure(error) {
   return {
-    type: types.FETCH_USERS_FAILURE,
+    type: types.LIST_USERS_FAILURE,
     payload: { error }
   }
 }
