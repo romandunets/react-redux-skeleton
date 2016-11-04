@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import * as types from '../actions/actionTypes';
 import userApi from '../api/UserApi';
 

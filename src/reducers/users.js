@@ -1,9 +1,7 @@
 import * as types from '../actions/actionTypes';
+import initialState from './initialState';
 
-const usersReducer = (state = {
-    users: [],
-    error: ''
-  }, action) => {
+const usersReducer = (state = initialState.users, action) => {
   switch(action.type) {
     case types.LIST_USERS_REQUEST:
       return {...state, users: []}
