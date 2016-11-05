@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import { bindActionCreators } from 'redux'
 
 import * as userActions from '../../actions/userActions'
@@ -11,16 +12,22 @@ class UsersListPage extends Component {
   }
 
   render() {
-    const { users } = this.props;
+    const { users, message, error } = this.props;
     return (
-      <UsersList users={ users } />
+      <div>
+        <h2>{ message }</h2>
+        <Link to={`/users/new`}>Create user</Link>
+        <UsersList users={ users } />
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    users: state.users.users
+    users: state.users.users,
+    message: state.users.message,
+    error: state.users.error
   }
 }
 

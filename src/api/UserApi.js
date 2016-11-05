@@ -14,6 +14,10 @@ class UserApi {
   static getUser(id) {
     return this.getClient().get(`/users/${id}`);
   }
+
+  static createUser(user) {
+    return this.getClient().post(`/users`, user);
+  }
 }
 
 export default UserApi;

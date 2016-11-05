@@ -4,6 +4,7 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router';
 import App from './containers/App';
 import UsersListPage from './containers/users/UsersListPage';
 import UserPage from './containers/users/UserPage';
+import UserNewPage from './containers/users/UserNewPage';
 
 export default (store) => {
   return (
@@ -11,6 +12,7 @@ export default (store) => {
       <IndexRedirect to="/users" />
       <Route path="users">
         <IndexRoute component={UsersListPage} />
+        <Route path="new" component={UserNewPage} />
         <Route path=":id" component={UserPage} />
       </Route>
     </Route>

@@ -1,3 +1,5 @@
+import { browserHistory } from 'react-router';
+
 import * as types from '../actions/actionTypes';
 import userApi from '../api/UserApi';
 
@@ -59,6 +61,39 @@ function getUserSuccess(user) {
 function getUserFailure(error) {
   return {
     type: types.GET_USER_FAILURE,
+    payload: { error }
+  }
+}
+
+export function createUser(user) {
+  return function(dispatch) {
+    dispatch(createUserRequest());
+    userApi.createUser(user)
+      .then(function (response) {
+        dispatch(createUserSuccess(response.data));
+        browserHistory.push('/users');
+      })
+      .catch(function (error) {
+        console.log(error);
+        dispatch(createUserFailure(error));
+      });
+  }
+}
+
+function createUserRequest() {
+  return { type: types.CREATE_USER_REQUEST }
+}
+
+function createUserSuccess(user) {
+  return {
+    type: types.CREATE_USER_SUCCESS,
+    payload: { user }
+  }
+}
+
+function createUserFailure(error) {
+  return {
+    type: types.CREATE_USER_FAILURE,
     payload: { error }
   }
 }
