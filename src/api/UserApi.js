@@ -8,7 +8,11 @@ class UserApi {
   }
 
   static listUsers() {
-    return this.getClient().get('/users');
+    return this.getClient().get(`/users`);
+  }
+
+  static getUser(id) {
+    return this.getClient().get(`/users/${id}`);
   }
 }
 

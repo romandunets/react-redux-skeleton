@@ -9,6 +9,12 @@ const usersReducer = (state = initialState.users, action) => {
       return {...state, users: action.payload.users}
     case types.LIST_USERS_FAILURE:
       return {...state, error: action.payload}
+    case types.GET_USER_REQUEST:
+      return {...state, user: {}}
+    case types.GET_USER_SUCCESS:
+      return {...state, user: action.payload.user}
+    case types.GET_USER_FAILURE:
+      return {...state, error: action.payload}
     default:
       return state;
   }

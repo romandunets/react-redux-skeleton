@@ -31,3 +31,34 @@ function listUsersFailure(error) {
     payload: { error }
   }
 }
+
+export function getUser(id) {
+  return function(dispatch) {
+    dispatch(getUserRequest());
+    userApi.getUser(id)
+      .then(function (response) {
+        dispatch(getUserSuccess(response.data));
+      })
+      .catch(function (error) {
+        dispatch(getUserFailure(error));
+      });
+  }
+}
+
+function getUserRequest() {
+  return { type: types.GET_USER_REQUEST }
+}
+
+function getUserSuccess(user) {
+  return {
+    type: types.GET_USER_SUCCESS,
+    payload: { user }
+  }
+}
+
+function getUserFailure(error) {
+  return {
+    type: types.GET_USER_FAILURE,
+    payload: { error }
+  }
+}
