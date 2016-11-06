@@ -5,6 +5,7 @@ import App from './containers/App';
 import UsersListPage from './containers/users/UsersListPage';
 import UserPage from './containers/users/UserPage';
 import UserNewPage from './containers/users/UserNewPage';
+import UserEditPage from './containers/users/UserEditPage';
 
 export default (store) => {
   return (
@@ -14,6 +15,7 @@ export default (store) => {
         <IndexRoute component={UsersListPage} />
         <Route path="new" component={UserNewPage} />
         <Route path=":id" component={UserPage} />
+        <Route path=":id/edit" component={UserEditPage} />
       </Route>
     </Route>
   )

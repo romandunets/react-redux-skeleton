@@ -71,10 +71,9 @@ export function createUser(user) {
     userApi.createUser(user)
       .then(function (response) {
         dispatch(createUserSuccess(response.data));
-        browserHistory.push('/users');
+        browserHistory.push(`/users`);
       })
       .catch(function (error) {
-        console.log(error);
         dispatch(createUserFailure(error));
       });
   }
@@ -97,3 +96,38 @@ function createUserFailure(error) {
     payload: { error }
   }
 }
+
+export function updateUser(user) {
+  return function(dispatch) {
+    dispatch(updateUserRequest());
+    userApi.updateUser(user)
+      .then(function (response) {
+        dispatch(updateUserSuccess(response.data));
+        console.log(response);
+        browserHistory.push(`/users/${user.id}`);
+      })
+      .catch(function (error) {
+        console.log(response);
+        dispatch(updateUserFailure(error));
+      });
+  }
+}
+
+function updateUserRequest() {
+  return { type: types.UPDATE_USER_REQUEST }
+}
+
+function updateUserSuccess(user) {
+  return {
+    type: types.UPDATE_USER_SUCCESS,
+    payload: { user }
+  }
+}
+
+function updateUserFailure(error) {
+  return {
+    type: types.UPDATE_USER_FAILURE,
+    payload: { error }
+  }
+}
+

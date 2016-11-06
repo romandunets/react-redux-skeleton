@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux'
+import { compose } from 'redux';
 
 class UserForm extends Component {
   render() {
     const { handleSubmit } = this.props;
+
     return (
       <form onSubmit={ handleSubmit }>
         <div>
@@ -16,8 +19,4 @@ class UserForm extends Component {
   }
 }
 
-UserForm = reduxForm({
-  form: 'user'
-})(UserForm);
-
-export default UserForm;
+export default reduxForm({form: 'user'})(UserForm);

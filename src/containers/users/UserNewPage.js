@@ -11,6 +11,7 @@ class UserNewPage extends Component {
   }
 
   render() {
+    const { user } = this.props;
     return (
       <UserForm onSubmit={ this.handleSubmit.bind(this) } />
     );
