@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 import { compose } from 'redux';
 
 class UserForm extends Component {
@@ -14,6 +15,7 @@ class UserForm extends Component {
           <Field name="username" component="input" type="text" />
         </div>
         <button type="submit">Submit</button>
+        <a href='#' onClick={browserHistory.goBack}>Cancel</a>
       </form>
     );
   }
