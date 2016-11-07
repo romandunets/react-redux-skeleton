@@ -11,16 +11,20 @@ class UserPage extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, message } = this.props;
     return (
-      <UserCard user={ user } />
+      <div>
+        <h2>{ message }</h2>
+        <UserCard user={ user } />
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    user: state.users.user
+    user: state.users.user,
+    message: state.users.message
   }
 }
 
