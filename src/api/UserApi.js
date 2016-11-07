@@ -22,6 +22,10 @@ class UserApi {
   static updateUser(user) {
     return this.getClient().put(`/users/${user.id}`, user);
   }
+
+  static deleteUser(id) {
+    return this.getClient().delete(`/users/${id}`);
+  }
 }
 
 export default UserApi;

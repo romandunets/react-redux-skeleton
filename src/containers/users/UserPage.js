@@ -7,6 +7,10 @@ import * as userActions from '../../actions/userActions';
 import UserCard from '../../components/users/UserCard';
 
 class UserPage extends Component {
+  deleteUser(id) {
+    this.props.actions.deleteUser(id);
+  }
+
   componentWillMount() {
     this.props.actions.getUser(this.props.params.id);
   }
@@ -16,7 +20,7 @@ class UserPage extends Component {
     return (
       <div>
         <h2>{ message }</h2>
-        <Link to={`/users`}>Back</Link> | <Link to={`/users/${user.id}/edit`}>Edit</Link>
+        <Link to={`/users`}>Back</Link> | <Link to={`/users/${user.id}/edit`}>Edit</Link> | <a href='#' onClick={this.deleteUser.bind(this, user.id)}>Delete</a>
         <UserCard user={ user } />
       </div>
     );

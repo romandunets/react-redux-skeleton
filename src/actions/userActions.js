@@ -103,11 +103,9 @@ export function updateUser(user) {
     userApi.updateUser(user)
       .then(function (response) {
         dispatch(updateUserSuccess(response.data));
-        console.log(response);
         browserHistory.push(`/users/${user.id}`);
       })
       .catch(function (error) {
-        console.log(response);
         dispatch(updateUserFailure(error));
       });
   }
@@ -131,3 +129,31 @@ function updateUserFailure(error) {
   }
 }
 
+export function deleteUser(id) {
+  return function(dispatch) {
+    dispatch(deleteUserRequest());
+    userApi.deleteUser(id)
+      .then(function (response) {
+        dispatch(deleteUserSuccess(response.data));
+        browserHistory.push(`/users`);
+      })
+      .catch(function (error) {
+        dispatch(deleteUserFailure(error));
+      });
+  }
+}
+
+function deleteUserRequest() {
+  return { type: types.DELETE_USER_REQUEST }
+}
+
+function deleteUserSuccess() {
+  return { type: types.DELETE_USER_SUCCESS }
+}
+
+function deleteUserFailure(error) {
+  return {
+    type: types.DELETE_USER_FAILURE,
+    payload: { error }
+  }
+}

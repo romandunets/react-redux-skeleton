@@ -27,6 +27,12 @@ const usersReducer = (state = initialState.users, action) => {
       return {...state, message: 'User successfully updated', error: ''}
     case types.UPDATE_USER_FAILURE:
       return {...state, message: '', error: action.payload}
+    case types.DELETE_USER_REQUEST:
+      return {...state, message: '', error: ''}
+    case types.DELETE_USER_SUCCESS:
+      return {...state, message: 'User successfully deleted', error: ''}
+    case types.DELETE_USER_FAILURE:
+      return {...state, message: '', error: action.payload}
     default:
       return state;
   }
