@@ -1,9 +1,10 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router'
+import { bindActionCreators } from 'redux';
 
-import * as userActions from '../../actions/userActions'
-import UserCard from '../../components/users/UserCard'
+import * as userActions from '../../actions/userActions';
+import UserCard from '../../components/users/UserCard';
 
 class UserPage extends Component {
   componentWillMount() {
@@ -15,6 +16,7 @@ class UserPage extends Component {
     return (
       <div>
         <h2>{ message }</h2>
+        <Link to={`/users`}>Back</Link> | <Link to={`/users/${user.id}/edit`}>Edit</Link>
         <UserCard user={ user } />
       </div>
     );
