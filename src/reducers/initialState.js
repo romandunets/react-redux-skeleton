@@ -4,5 +4,9 @@ export default {
     user: {},
     message: '',
     error: ''
+  },
+  auth: {
+    isAuthenticated: false,
+    message: ''
   }
 }

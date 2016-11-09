@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
-import { compose } from 'redux';
 
-class UserForm extends Component {
+class LoginForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -13,15 +11,18 @@ class UserForm extends Component {
           <label htmlFor="username">Username</label>
           <Field name="username" component="input" type="text" />
         </div>
-        <button type="submit">Submit</button>
-        <a href='#' onClick={browserHistory.goBack}>Cancel</a>
+        <div>
+          <label htmlFor="password">Password</label>
+          <Field name="password" component="input" type="password" />
+        </div>
+        <button type="submit">Login</button>
       </form>
     );
   }
 }
 
-UserForm = reduxForm({
-  form: 'user'
-})(UserForm);
+LoginForm = reduxForm({
+  form: 'login'
+})(LoginForm);
 
-export default reduxForm({form: 'user'})(UserForm);
+export default LoginForm;
