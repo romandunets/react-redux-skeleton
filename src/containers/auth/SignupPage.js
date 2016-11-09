@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import * as authActions from '../../actions/authActions'
-import UserForm from '../../components/users/UserForm'
+import * as authActions from '../../actions/authActions';
+import UserForm from '../../components/users/UserForm';
 
 class SignupPage extends Component {
   handleSubmit(user) {

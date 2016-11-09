@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute, IndexRedirect } from 'react-router';
 
 import App from './containers/App';
+import AppWithMenu from './containers/AppWithMenu';
 
 import LoginPage from './containers/auth/LoginPage';
 import SignupPage from './containers/auth/SignupPage';
@@ -19,7 +20,7 @@ export default (store) => {
       <Route path="login" component={LoginPage} />
       <Route path="signup" component={SignupPage} />
 
-      <Route path="users" onEnter={requireAuthentication(store)}>
+      <Route path="users" component={AppWithMenu} onEnter={requireAuthentication(store)}>
         <IndexRoute component={UsersListPage} />
         <Route path="new" component={UserNewPage} />
         <Route path=":id" component={UserPage} />
@@ -32,7 +33,7 @@ export default (store) => {
 const requireAuthentication = (store) => {
   return (nextState, replaceState) => {
     const state = store.getState();
-    if (!state.auth.isAuthenticated) {
+    if (!state.auth.isAuthenticated && localStorage.getItem("token") === null) {
       replaceState({ pathname: '/login', nextPathname: nextState.location.pathname });
     }
   }
