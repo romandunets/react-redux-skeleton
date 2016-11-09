@@ -11,9 +11,20 @@ class LoginPage extends Component {
   }
 
   render() {
+    const { message } = this.props;
     return (
-      <LoginForm onSubmit={ this.handleSubmit.bind(this) } />
+      <div>
+        <h1>Login</h1>
+        <h2>{ message }</h2>
+        <LoginForm onSubmit={ this.handleSubmit.bind(this) } />
+      </div>
     );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    message: state.auth.message
   }
 }
 
@@ -23,4 +34,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

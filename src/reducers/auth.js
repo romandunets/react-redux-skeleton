@@ -8,7 +8,7 @@ function authReducer(state = initialState.auth, action) {
     case types.LOGIN_SUCCESS:
       return {...state, message: '', isAuthenticated: true}
     case types.LOGIN_FAILURE:
-      return {...state, message: 'Login failed', isAuthenticated: false}
+      return {...state, message: action.payload, isAuthenticated: false}
     default:
       return state;
   }
