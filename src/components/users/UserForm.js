@@ -24,4 +24,4 @@ UserForm = reduxForm({
   form: 'user'
 })(UserForm);
 
-export default reduxForm({form: 'user'})(UserForm);
+export default UserForm;

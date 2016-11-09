@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 
 import * as userActions from '../../actions/userActions';

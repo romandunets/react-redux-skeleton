@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 
 import * as authActions from '../../actions/authActions';
@@ -17,6 +18,7 @@ class LoginPage extends Component {
         <h1>Login</h1>
         <h2>{ message }</h2>
         <LoginForm onSubmit={ this.handleSubmit.bind(this) } />
+        <Link to={'signup'}>Signup</Link>
       </div>
     );
   }

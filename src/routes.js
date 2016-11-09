@@ -4,6 +4,7 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router';
 import App from './containers/App';
 
 import LoginPage from './containers/auth/LoginPage';
+import SignupPage from './containers/auth/SignupPage';
 
 import UsersListPage from './containers/users/UsersListPage';
 import UserPage from './containers/users/UserPage';
@@ -16,6 +17,7 @@ export default (store) => {
       <IndexRedirect to="/users" />
 
       <Route path="login" component={LoginPage} />
+      <Route path="signup" component={SignupPage} />
 
       <Route path="users" onEnter={requireAuthentication(store)}>
         <IndexRoute component={UsersListPage} />

@@ -2,12 +2,12 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import * as userActions from '../../actions/userActions'
+import * as authActions from '../../actions/authActions'
 import UserForm from '../../components/users/UserForm'
 
-class UserNewPage extends Component {
+class SignupPage extends Component {
   handleSubmit(user) {
-    this.props.actions.createUser(user);
+    this.props.actions.signup(user);
   }
 
   render() {
@@ -19,8 +19,8 @@ class UserNewPage extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(userActions, dispatch)
+    actions: bindActionCreators(authActions, dispatch)
   }
 }
 
-export default connect(null, mapDispatchToProps)(UserNewPage);
+export default connect(null, mapDispatchToProps)(SignupPage);

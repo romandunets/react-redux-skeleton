@@ -33,3 +33,33 @@ function loginFailure(error) {
     payload: error
   }
 }
+
+export function signup(credentials) {
+  return function(dispatch) {
+    dispatch(signupRequest());
+    /*return authApi.signup(credentials)
+      .then(function (response) {*/
+        localStorage.setItem('token', 'TOKEN');//localStorage.setItem('token', response.data.token);
+        dispatch(signupSuccess());
+        browserHistory.replace('/');
+    /*  })
+      .catch(function (error) {
+        dispatch(signupFailure(error));
+      });*/
+  }
+}
+
+function signupRequest() {
+  return { type: types.SIGNUP_REQUEST }
+}
+
+function signupSuccess() {
+  return { type: types.SIGNUP_SUCCESS }
+}
+
+function signupFailure(error) {
+  return {
+    type: types.SIGNUP_FAILURE,
+    payload: error
+  }
+}
