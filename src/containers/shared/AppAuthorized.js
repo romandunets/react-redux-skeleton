@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 
-import * as authActions from '../actions/authActions'
+import * as authActions from '../../actions/authActions'
 
 class AppAuthorized extends Component {
   handleLogout(event) {

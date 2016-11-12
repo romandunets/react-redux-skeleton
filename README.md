@@ -4,6 +4,17 @@ This project is a skeleton for React + Redux web application. It can be used as 
 
 The repository contains a sample React application which is preconfigured to install all the dependencies for instant development. The application has very simple business logic showing how to implement basic operations with users. The main purpose of this project is to demonstrate how to organize your React + redux application.
 
+## Technologies
+
+This project is a basic web application based on the following technologies:
+* React
+* Redux
+* Redux Form
+* Babel
+* Webpack
+
+You can check all the dependencies in package.json.
+
 ## Getting Started
 
 To get you started you can simply clone the react-redux-skeleton repository and install the dependencies:
@@ -14,9 +25,9 @@ You need to must a git client to clone the repository. You can get it from [http
 
 Also you must to have node.js and npm (node.js package manager). You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone angular-modular
+### Clone repository
 
-Clone the angular-modular repository using [git][git]:
+Clone the repository using [git](git):
 
 ```
 git clone https://github.com/romandunets/react-redux-skeleton.git
@@ -40,7 +51,7 @@ Start auto-reloading webpack-dev-server:
 npm start
 ```
 
-## DEBUGGING
+## Debugging
 
 If you have `Error: watch . ENOSPC` error while running api, this can solve the problem:
 
