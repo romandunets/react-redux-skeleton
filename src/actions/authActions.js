@@ -7,15 +7,21 @@ import authApi from '../api/AuthApi';
 export function signup(credentials) {
   return function(dispatch) {
     dispatch(signupRequest());
+    // Uncomment this to enable JWT authentication
     /*return authApi.signup(credentials)
-      .then(function (response) {*/
-        localStorage.setItem('token', 'TOKEN');//localStorage.setItem('token', response.data.token);
+      .then(function (response) {
+        localStorage.setItem('token', response.data.token);
         dispatch(signupSuccess());
         browserHistory.replace('/');
-    /*  })
+      })
       .catch(function (error) {
         dispatch(signupFailure(error));
       });*/
+
+    // Comment / delete this to enable JWT authentication
+    localStorage.setItem('token', 'TOKEN');
+    dispatch(signupSuccess());
+    browserHistory.replace('/');
   }
 }
 
@@ -37,15 +43,21 @@ function signupFailure(error) {
 export function login(credentials) {
   return function(dispatch) {
     dispatch(loginRequest());
+    // Uncomment this to enable JWT authentication
     /*return authApi.login(credentials)
-      .then(function (response) {*/
-        localStorage.setItem('token', 'TOKEN');//localStorage.setItem('token', response.data.token);
+      .then(function (response) {
+        localStorage.setItem('token', response.data.token);
         dispatch(loginSuccess());
         browserHistory.replace('/');
-    /*  })
+      })
       .catch(function (error) {
         dispatch(loginFailure(error));
       });*/
+
+    // Comment / delete this to enable JWT authentication
+    localStorage.setItem('token', 'TOKEN');//localStorage.setItem('token', response.data.token);
+    dispatch(loginSuccess());
+    browserHistory.replace('/');
   }
 }
 
