@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import * as authActions from '../actions/authActions'
 
-class AppWithMenu extends Component {
+class AppAuthorized extends Component {
   handleLogout(event) {
     event.preventDefault();
     this.props.actions.logout();
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(AppWithMenu);
+export default connect(null, mapDispatchToProps)(AppAuthorized);
