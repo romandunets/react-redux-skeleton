@@ -13,7 +13,7 @@ This project is a basic web application based on the following technologies:
 * Babel
 * Webpack
 
-You can check all the dependencies in package.json.
+You can check all the dependencies in package.json. Mock REST API works on JSON server.
 
 ## Getting Started
 
