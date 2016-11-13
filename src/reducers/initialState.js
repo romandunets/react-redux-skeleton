@@ -1,7 +1,10 @@
 export default {
   users: {
   	users: [],
-    user: {},
+    user: {
+      id: 0,
+      username: ''
+    },
     message: '',
     error: ''
   },

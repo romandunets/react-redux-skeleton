@@ -10,7 +10,12 @@ const UsersList = ({ users }) => {
 }
 
 UsersList.propTypes = {
-  users: PropTypes.array.isRequired
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      username: PropTypes.string.isRequired
+    }).isRequired
+  ).isRequired
 }
 
 export default UsersList;

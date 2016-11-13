@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router'
 
 const UsersListItem = ({ user }) => (
@@ -6,5 +6,12 @@ const UsersListItem = ({ user }) => (
     <Link to={`/users/${user.id}`}>{user.username}</Link>
   </li>
 )
+
+UsersListItem.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired
+  }).isRequired
+}
 
 export default UsersListItem;

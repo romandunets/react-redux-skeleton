@@ -10,7 +10,10 @@ const UserCard = ({ user }) => {
 }
 
 UserCard.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default UserCard;
