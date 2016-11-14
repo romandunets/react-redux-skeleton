@@ -15,6 +15,20 @@ This project is a basic web application based on the following technologies:
 
 You can check all the dependencies in package.json. Mock REST API works on JSON server.
 
+## Features
+
+This project contains basic features to demostrate how React and Redux could be utilized in common situations:
+* JWT Authentication (mock up)
+  * Sign up
+  * Log in
+  * Log out
+* Users CRUD operations
+  * List all users
+  * Show user
+  * Create new user
+  * Edit user
+  * Delete user
+
 ## Getting Started
 
 To get you started you can simply clone the react-redux-skeleton repository and install the dependencies:
