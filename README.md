@@ -10,6 +10,7 @@ This project is a basic web application based on the following technologies:
 * React
 * Redux
 * Redux Form
+* React-router
 * Babel
 * Webpack
 
@@ -65,10 +66,7 @@ Start auto-reloading webpack-dev-server:
 npm start
 ```
 
-## Debugging
+## References
 
-If you have `Error: watch . ENOSPC` error while running api, this can solve the problem:
-
-```
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-```
+* **[Official redux tutorial and documentation](http://redux.js.org/docs/introduction/)** by redux.js.org
+* **[9 things every React.js beginner should know](https://camjackson.net/post/9-things-every-reactjs-beginner-should-know/)** by Cam Jackson
