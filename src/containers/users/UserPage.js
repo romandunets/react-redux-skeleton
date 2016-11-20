@@ -16,21 +16,27 @@ class UserPage extends Component {
   }
 
   render() {
-    const { user, message } = this.props;
-    return (
-      <div>
-        <h2>{ message }</h2>
-        <Link to={`/users`}>Back</Link> | <Link to={`/users/${user.id}/edit`}>Edit</Link> | <a href='#' onClick={this.deleteUser.bind(this, user.id)}>Delete</a>
-        <UserCard user={ user } />
-      </div>
-    );
+    const { user, message, isLoading } = this.props;
+
+    if (!isLoading) {
+      return (
+        <div>
+          <h2>{ message }</h2>
+          <Link to={`/users`}>Back</Link> | <Link to={`/users/${user.id}/edit`}>Edit</Link> | <a href='#' onClick={this.deleteUser.bind(this, user.id)}>Delete</a>
+          <UserCard user={ user } />
+        </div>
+      );
+    }
+
+    return null;
   }
 }
 
 const mapStateToProps = (state) => {
   return {
     user: state.users.user,
-    message: state.users.message
+    message: state.users.message,
+    isLoading: state.users.isLoading
   }
 }
 
