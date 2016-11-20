@@ -16,10 +16,10 @@ class UserEditPage extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, isLoading } = this.props;
     const formValues = { initialValues: user }
 
-    if (Object.keys(user).length > 0) {
+    if (!isLoading) {
       return (
         <UserForm onSubmit={ this.handleSubmit.bind(this) } {...formValues} />
       );
@@ -32,7 +32,8 @@ class UserEditPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.users.user
+    user: state.users.user,
+    isLoading: state.users.isLoading
   }
 }
 
