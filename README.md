@@ -83,7 +83,7 @@ webpack.config.js ---------------------- webpack config file (can be splitted fo
 
 ## Getting Started
 
-To get you started you can simply clone the react-redux-skeleton repository and install the dependencies:
+To get you started you can simply clone the react-redux-skeleton repository and install the dependencies.
 
 ### Prerequisites
 
