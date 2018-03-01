@@ -6,18 +6,18 @@ services:
       dockerfile: ./docker/api/Dockerfile
     environment:
       - NODE_ENV=dev
-    volumes:
-      - ./:/home/node/app
     ports:
       - 3001:3001
 
-  ui:
+  web:
     build:
       context: ./
-      dockerfile: ./docker/ui/Dockerfile
+      dockerfile: ./docker/web/Dockerfile
     environment:
       - NODE_ENV=dev
     volumes:
-      - ./:/home/node/app
+      - ./src:/home/node/app/src
     ports:
       - 3000:3000
+    depends_on:
+      - api
