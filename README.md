@@ -91,13 +91,17 @@ You need to must a git client to clone the repository. You can get it from [http
 
 Also you must to have node.js and npm (node.js package manager). You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone repository
+### Development environment
 
 Clone the repository using [git](git):
 
 ```
 git clone https://github.com/romandunets/react-redux-skeleton.git
 ```
+
+Next, you need to install packages and run the application. There are two options to do that.
+
+#### Running local development environment
 
 Install all dependencies:
 
@@ -116,6 +120,16 @@ Start auto-reloading webpack-dev-server:
 ```
 npm start
 ```
+
+#### Running docker-compose development environment
+
+You should have Docker and Docker-Compose on your machine to run the following commands. Build and start docker-compose containers:
+
+```
+docker-compose up
+```
+
+Container uses local directory as a volume, hence it supports hot reload for changes in the node code. For more information look at `docker-compose.yml`.
 
 ## References
 
